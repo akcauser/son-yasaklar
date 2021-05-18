@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7759431e303e2d722a264a8a991a9e84",
+    "content-hash": "f775a8dc6cb06248e48a39022bb655c4",
     "packages": [
+        {
+            "name": "akcauser/cruder",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akcauser/cruder.git",
+                "reference": "0278341f86bfa2b92f1df33b13286052ecdfdcab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akcauser/cruder/zipball/0278341f86bfa2b92f1df33b13286052ecdfdcab",
+                "reference": "0278341f86bfa2b92f1df33b13286052ecdfdcab",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Akcauser\\Cruder\\CruderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Akcauser\\Cruder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "akcauser",
+                    "email": "akcaertugrulgazi@gmail.com"
+                }
+            ],
+            "description": "CRUD Generator For Laravel",
+            "support": {
+                "issues": "https://github.com/akcauser/cruder/issues",
+                "source": "https://github.com/akcauser/cruder/tree/MainGeneratorClass"
+            },
+            "time": "2021-05-18T07:02:44+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
@@ -7330,7 +7375,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "akcauser/cruder": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
