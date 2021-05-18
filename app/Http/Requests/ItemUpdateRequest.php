@@ -24,6 +24,6 @@ class ItemUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return Item::$validationRules;
+        return Item::getValidationRules();
     }
 }
