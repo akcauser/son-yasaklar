@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ApiItemTest extends TestCase
+class APIItemTest extends TestCase
 {
     use RefreshDatabase;
 
