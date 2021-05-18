@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Cruder\DataService\Abstract\IItemDataService;
 use Illuminate\Support\ServiceProvider;
 
 class DataServiceProvider extends ServiceProvider
@@ -15,6 +14,6 @@ class DataServiceProvider extends ServiceProvider
     public function register()
     {
         #repository-injection-part
-        $this->app->singleton(IItemDataService::class, \App\Cruder\DataService\Concrete\ItemDataService::class);
+        $this->app->singleton(\App\Cruder\DataService\Abstract\IItemDataService::class, \App\Cruder\DataService\Concrete\ItemDataService::class);
     }
 }
