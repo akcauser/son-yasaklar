@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Cruder\Service\Abstract\IItemService;
 use Illuminate\Support\ServiceProvider;
 
 class BusinessServiceProvider extends ServiceProvider
@@ -14,6 +15,6 @@ class BusinessServiceProvider extends ServiceProvider
     public function register()
     {
         #repository-injection-part
-$this->app->singleton(\App\Cruder\Service\Abstract\IItemService::class, \App\Cruder\Service\Concrete\ItemService::class);
+        $this->app->singleton(IItemService::class, \App\Cruder\Service\Concrete\ItemService::class);
     }
 }
