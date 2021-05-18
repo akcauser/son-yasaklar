@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         BusinessServiceProvider::class,
         DataServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
     ],
 
     /*

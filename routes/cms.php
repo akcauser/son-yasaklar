@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', function () {
     return view('cms.index');
-})->name('cms.index');
-Route::prefix('items')->group(function () {
+})->name('cms.index')->middleware(['auth', 'role:Super Admin']);
+
+Route::prefix('items')->middleware(['auth', 'role:Super Admin'])->group(function () {
     Route::get('', [App\Http\Controllers\CMS\CMSItemController::class, 'index'])->name('cms.items.index');
     Route::get('create', [App\Http\Controllers\CMS\CMSItemController::class, 'create'])->name('cms.items.create');
     Route::get('{id}', [App\Http\Controllers\CMS\CMSItemController::class, 'show'])->name('cms.items.show');
