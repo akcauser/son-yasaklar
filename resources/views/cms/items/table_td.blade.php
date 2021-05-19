@@ -2,7 +2,7 @@
 
 <td>{{$item->slug}}</td>
 
-<td>{{$item->description}}</td>
+<td>{!! $item->description !!}</td>
 
 <td>
                                 {{$item->created_at}}
