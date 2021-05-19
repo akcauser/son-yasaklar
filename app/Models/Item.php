@@ -23,7 +23,7 @@ class Item extends Model
     public static $validationRules = [
         'city' => 'required|string|max:256',
         'slug' => 'required|unique:items,slug,%MODEL_PRIMARY_KEY_FIELD_VALUE%|string|max:256',
-        'description' => 'required|string|max:256',
+        'description' => 'required|string',
     ];
 
     public static function getValidationRules()
