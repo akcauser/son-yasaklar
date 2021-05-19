@@ -15,16 +15,15 @@ class ItemDataService implements IItemDataService
     public function filter($search)
     {
         $query = Item::query();
-        
+
         if (isset($search)) {
             $words = explode(' ', $search);
             if (count($words) > 0) {
                 $query = $query->where(function ($sQuery) use ($words) {
                     foreach ($words as $word) {
                         $sQuery->orWhere('city', 'like', "%$word%");
-						$sQuery->orWhere('slug', 'like', "%$word%");
-						$sQuery->orWhere('description', 'like', "%$word%");
-						
+                        $sQuery->orWhere('slug', 'like', "%$word%");
+                        $sQuery->orWhere('description', 'like', "%$word%");
                     }
                 });
             }
@@ -41,9 +40,9 @@ class ItemDataService implements IItemDataService
     {
         $item = new Item();
         $item->city = $data["city"];
-		$item->slug = $data["slug"];
-		$item->description = $data["description"];
-		
+        $item->slug = $data["slug"];
+        $item->description = $data["description"];
+
 
         if (!$item->save()) {
             return false;
@@ -60,9 +59,9 @@ class ItemDataService implements IItemDataService
     public function update(Item $item, $data)
     {
         $item->city = $data["city"];
-		$item->slug = $data["slug"];
-		$item->description = $data["description"];
-		
+        $item->slug = $data["slug"];
+        $item->description = $data["description"];
+
 
         if (!$item->save()) {
             return false;
@@ -83,5 +82,14 @@ class ItemDataService implements IItemDataService
     public function get($id)
     {
         return Item::find($id);
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function get_by_slug($slug)
+    {
+        return Item::where('slug', $slug)->first();
     }
 }

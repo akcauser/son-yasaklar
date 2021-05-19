@@ -21,6 +21,7 @@ Route::prefix('items')->group(function () {
     Route::get('', [\App\Http\Controllers\API\APIItemController::class, 'index'])->name('api.items.index');
     Route::post('', [\App\Http\Controllers\API\APIItemController::class, 'store'])->name('api.items.store');
     Route::get('{id}', [\App\Http\Controllers\API\APIItemController::class, 'show'])->name('api.items.show');
+    Route::get('{slug}/slug', [\App\Http\Controllers\API\APIItemController::class, 'show_by_slug'])->name('api.items.show_by_slug');
     Route::put('{id}', [\App\Http\Controllers\API\APIItemController::class, 'update'])->name('api.items.update');
     Route::delete('{id}', [\App\Http\Controllers\API\APIItemController::class, 'destroy'])->name('api.items.destroy');
 });

@@ -33,6 +33,15 @@ class APIItemController extends Controller
         return response()->json($response);
     }
 
+    public function show_by_slug($slug)
+    {
+        $response = $this->itemService->get_by_slug($slug);
+        if ($response === 404)
+            return response()->json('Item not found', 404);
+
+        return response()->json($response);
+    }
+
     public function store(ItemStoreRequest $request)
     {
         $response = $this->itemService->store($request);

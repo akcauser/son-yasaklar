@@ -12,4 +12,5 @@ interface IItemDataService
     public function update(Item $item, $data);
     public function delete(Item $item);
     public function get($id);
+    public function get_by_slug($slug);
 }

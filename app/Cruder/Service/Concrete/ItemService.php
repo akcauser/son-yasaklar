@@ -26,11 +26,22 @@ class ItemService implements IItemService
         return $item;
     }
 
+    public function get_by_slug($slug)
+    {
+
+        $item = $this->itemDataService->get_by_slug($slug);
+        if (!$item) {
+            return 404;
+        }
+
+        return $item;
+    }
+
     public function get_all()
     {
-        if(request('search')){
-            return $this->itemDataService->filter(request('search'));    
-        }else{
+        if (request('search')) {
+            return $this->itemDataService->filter(request('search'));
+        } else {
             return $this->itemDataService->get_all();
         }
     }
