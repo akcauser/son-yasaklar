@@ -1,10 +1,10 @@
-# Son Yasaklar
+# Son Yasaklar
 
-## App 
+## App 
 
 ![Son Yasaklar](screenshots/1.png)
 
 
-## Source
+## Source
 
 * Turkey Map: https://github.com/dnomak/svg-turkiye-haritasi
