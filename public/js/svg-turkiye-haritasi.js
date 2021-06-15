@@ -60,7 +60,7 @@ function svgturkiyeharitasi() {
           + dataReference
         );
 
-        const url = 'https://panel.sonyasaklar.com/api/items/' + dataReference + '/slug';
+        const url = 'https://sonyasaklar.com/api/items/' + dataReference + '/slug';
         $.get(url, function () {
           let city = "";
           let description = "";
